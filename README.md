@@ -135,19 +135,6 @@ Le script `deploy_django.sh` effectue les opérations suivantes :
 
 ---
 
-## 🔗 Connexion aux Applications
-
-### 🌍 FastAPI
-- **URL de l'API** : `[URL de votre API]`
-- **Documentation Swagger** : `[URL]/docs`
-- **Documentation ReDoc** : `[URL]/redoc`
-
-### 🏠 Django
-- **URL de l'interface web** : `[URL de votre application Django]`
-- **Panel d'administration** : `[URL]/admin`
-
----
-
 ## 🔐 Sécurité
 
 - **Configuration du pare-feu Azure SQL** pour restreindre les accès
