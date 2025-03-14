@@ -1,0 +1,55 @@
+# Environnements virtuels
+.venv/
+venv/
+ENV/
+env/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Base de données
+db.sqlite3
+*.sqlite3
+
+# Fichiers de secrets et configuration
+.env
+*.env
+secrets.json
+credentials.json
+config.json
+
+# Fichiers de logs
+*.log
+logs/
+
+# Fichiers de migrations Django (à conserver dans le dépôt pour la production)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Fichiers statiques collectés
+staticfiles/
+static/admin/
+static/rest_framework/
+
+# Fichiers média
+media/
+
+# Fichiers Docker
+.dockerignore
+
+# Fichiers IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Fichiers de déploiement Azure
+*.publishsettings
+PublishScripts/

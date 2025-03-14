@@ -1,0 +1,10 @@
+django
+django-widget-tweaks
+dotenv
+requests
+gunicorn==21.2.0
+fastapi
+uvicorn
+django-mssql-backend==2.8.1
+pyodbc==4.0.39
+pytz

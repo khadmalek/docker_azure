@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <div class="container mx-auto px-4 py-8">
+      <h2 class="text-2xl font-bold mb-6 text-center">Mon Profil</h2>
+      
+      <div class="max-w-md mx-auto bg-white p-6 rounded shadow">
+        <!-- Photo de profil -->
+        <div class="relative mx-auto w-36 rounded-full mb-6">
+          <span class="absolute right-0 m-3 h-3 w-3 rounded-full bg-green-500 ring-2 ring-green-300 ring-offset-2"></span>
+          {% if user.sexe == 'female' %}
+            <img class="mx-auto h-auto w-full rounded-full shadow-lg" src="{% static 'images/femme.jpg' %}" alt="Photo de profil" />
+          {% else %}
+            <img class="mx-auto h-auto w-full rounded-full shadow-lg" src="{% static 'images/homme.jpg' %}" alt="Photo de profil" />
+          {% endif %}
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2">Nom</label>
+          <p class="text-gray-600">{{ user.last_name }}</p>
+        </div>
+        
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2">Prénom</label>
+          <p class="text-gray-600">{{ user.first_name }}</p>
+        </div>
+        
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2">Email</label>
+          <p class="text-gray-600">{{ user.email }}</p>
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2">Date de naissance</label>
+          <p class="text-gray-600">{{ user.birth_date }}</p>
+        </div>
+        
+        <div class="mt-6 space-y-3">
+
+          {% if user.user_type == 'conseiller' %}
+            <a href="{% url 'loan_requests_list' %}" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 text-center block">
+            Demandes de prêts
+          {% else %}
+            <a href="{% url 'loan_requests_list' %}" class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 text-center block">
+              Mes demandes de prêts
+            </a>
+          {% endif %}
+          
+          <a href="{% url 'home' %}" class="w-full bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600 text-center block">
+            Retour
+          </a>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <p class="text-center text-red-500 py-8">Accès non autorisé</p>
+  {% endif %}
+{% endblock %}

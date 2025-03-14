@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Amélioration de nos services en ligne - Prime Assurance{% endblock %}
+
+{% block content %}
+<!-- Fil d'Ariane -->
+<div class="bg-gray-50 py-3 border-b">
+    <div class="container px-5 mx-auto">
+        <div class="flex text-sm text-gray-600">
+            <a href="{% url 'home' %}" class="hover:text-blue-700">Accueil</a>
+            <span class="mx-2">/</span>
+            <a href="{% url 'news' %}" class="hover:text-blue-700">Actualités</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-900 font-medium">Amélioration de nos services en ligne</span>
+        </div>
+    </div>
+</div>
+
+<!-- En-tête de l'actualité -->
+<section class="bg-white py-10">
+    <div class="container px-5 mx-auto">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center mb-6">
+                <span class="bg-green-50 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Services</span>
+                <span class="text-gray-500 text-sm ml-4">Publié le 10/02/2025</span>
+
+                {% if user.is_conseiller or user.is_superuser %}
+                <div class="ml-auto flex space-x-3">
+                    <a href="#" class="text-gray-600 hover:text-blue-700 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                        </svg>
+                        Modifier
+                    </a>
+                    <button type="button" class="text-red-600 hover:text-red-800 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                        Supprimer
+                    </button>
+                </div>
+                {% endif %}
+            </div>
+
+            <h1 class="text-4xl font-bold text-gray-900 mb-6">Amélioration de nos services en ligne</h1>
+
+            <div class="mb-10 rounded-2xl overflow-hidden shadow-lg">
+                <img src="{% static 'images/services.jpg' %}" alt="Services en ligne" class="w-full h-96 object-cover">
+            </div>
+
+            <div class="prose prose-lg max-w-none">
+                <p class="lead text-xl text-gray-700 mb-6">Découvrez notre nouveau chat pour discuter avec nos experts. Une assistance personnalisée disponible 24/7 pour répondre à toutes vos questions.</p>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Un service client innovant à votre disposition</h2>
+                <p>Prime Assurance est fière de vous présenter son nouveau service de chat en ligne avec des experts dédiés. Dans notre engagement constant à améliorer votre expérience, nous avons développé cette solution pour vous offrir une assistance immédiate et personnalisée, accessible à tout moment.</p>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Les avantages de notre nouveau chat</h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Disponibilité 24 heures sur 24, 7 jours sur 7</li>
+                    <li>Réponses instantanées à vos questions</li>
+                    <li>Conseillers experts dans tous nos domaines d'activité</li>
+                    <li>Interface intuitive et facile d'utilisation</li>
+                    <li>Historique de conversation accessible à tout moment</li>
+                </ul>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Comment ça marche ?</h2>
+                <p>Notre nouveau service de chat est conçu pour être simple et efficace :</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li>Connectez-vous à votre espace client sur notre site web ou notre application mobile</li>
+                    <li>Cliquez sur l'icône de chat située en bas à droite de votre écran</li>
+                    <li>Sélectionnez le sujet de votre demande parmi les options proposées</li>
+                    <li>Vous êtes immédiatement mis en relation avec un conseiller spécialisé</li>
+                </ol>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                    <div class="bg-blue-50 p-5 rounded-xl text-center">
+                        <div class="text-blue-700 text-3xl mb-3">🕒</div>
+                        <h3 class="text-lg font-bold text-blue-800 mb-2">Disponible 24/7</h3>
+                        <p class="text-gray-700 text-sm">Une assistance à tout moment, même en dehors des heures de bureau</p>
+                    </div>
+                    <div class="bg-blue-50 p-5 rounded-xl text-center">
+                        <div class="text-blue-700 text-3xl mb-3">👨‍💼</div>
+                        <h3 class="text-lg font-bold text-blue-800 mb-2">Experts qualifiés</h3>
+                        <p class="text-gray-700 text-sm">Des conseillers formés pour répondre à vos besoins spécifiques</p>
+                    </div>
+                    <div class="bg-blue-50 p-5 rounded-xl text-center">
+                        <div class="text-blue-700 text-3xl mb-3">⚡</div>
+                        <h3 class="text-lg font-bold text-blue-800 mb-2">Réponses rapides</h3>
+                        <p class="text-gray-700 text-sm">Obtenez des solutions immédiates à vos questions</p>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4">Pour quels types de demandes ?</h2>
+                <p>Notre service de chat en ligne vous permet d'obtenir de l'aide pour de nombreuses situations :</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Informations sur nos produits et services</li>
+                    <li>Assistance pour la souscription à une assurance ou un crédit</li>
+                    <li>Suivi de vos demandes en cours</li>
+                    <li>Déclaration de sinistre simplifiée</li>
+                    <li>Modification de vos informations personnelles</li>
+                    <li>Questions techniques sur votre espace client</li>
+                </ul>
+
+                <div class="bg-gray-50 p-6 rounded-xl mt-10 border border-gray-200">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Témoignage client</h3>
+                    <blockquote class="italic text-gray-700 mb-4">
+                        "J'ai utilisé le nouveau service de chat pour une question sur mon contrat d'assurance. J'ai été impressionné par la rapidité de la réponse et la qualité des conseils reçus. Le conseiller a parfaitement compris ma situation et m'a proposé une solution adaptée en quelques minutes seulement."
+                    </blockquote>
+                    <p class="text-right font-medium text-gray-900">Marie D., cliente depuis 2020</p>
+                </div>
+            </div>
+
+            <!-- Appel à l'action -->
+            <div class="mt-12 text-center">
+                <a href="#" class="bg-blue-700 text-white hover:bg-blue-800 font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300 inline-block">Essayer le chat maintenant</a>
+            </div>
+
+            <!-- Partage sur les réseaux sociaux -->
+            <div class="mt-10 pt-8 border-t border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Partager cette actualité</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-blue-600">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-blue-400">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-blue-700">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zm-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79zM6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 9.94v-8.37H5.5v8.37h2.77z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Actualités connexes -->
+<section class="bg-gray-50 py-16">
+    <div class="container px-5 mx-auto">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Actualités similaires</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition duration-300 hover:shadow-md">
+                    <img src="{% static 'images/offre.jpg' %}" alt="Nouvelle offre de crédit" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Crédit</span>
+                            <span class="text-gray-500 text-sm ml-auto">15/02/2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Nouvelle offre de crédit exceptionnelle</h3>
+                        <p class="text-gray-700 mb-4">Profitez d'un taux réduit exceptionnel pour votre projet immobilier.</p>
+                        <a href="{% url 'article1' %}" class="text-blue-700 font-medium hover:text-blue-900 inline-flex items-center">
+                            En savoir plus
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden transition duration-300 hover:shadow-md">
+                    <img src="{% static 'images/networking.jpg' %}" alt="Événement client" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-amber-50 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full">Événement</span>
+                            <span class="text-gray-500 text-sm ml-auto">05/02/2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">Événement exclusif pour nos clients</h3>
+                        <p class="text-gray-700 mb-4">Rejoignez-nous pour une soirée networking et avantages clients.</p>
+                        <a href="#" class="text-blue-700 font-medium hover:text-blue-900 inline-flex items-center">
+                            En savoir plus
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

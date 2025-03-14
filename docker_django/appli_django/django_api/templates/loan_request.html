@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+  <h2 class="text-2xl font-bold mb-6 text-center">Demande de Prêt</h2>
+  
+  <form method="post" class="max-w-lg mx-auto bg-white p-6 rounded shadow">
+    {% csrf_token %}
+    
+    {% for field in form %}
+      <div class="mb-4">
+        <label class="block text-gray-700 mb-2">{{ field.label }}</label>
+        {{ field|add_class:"w-full p-2 border rounded" }}
+        {% if field.errors %}
+          <span class="text-red-500 text-sm">{{ field.errors.0 }}</span>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <div class="flex gap-4 mt-6">
+      <button type="submit" class="flex-1 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+        Soumettre
+      </button>
+      <a href="{% url 'home' %}" class="flex-1 bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600 text-center">
+        Annuler
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}
